@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>blog</h1>
+
+    <h2>{{ name }}</h2>
+
+    <ol>
+        {% for item in lista %}
+            <li>
+                {{ item }}
+            </li>
+        {% endfor %}
+    </ol>
+
+    <h2>Posts</h2>
+    <ul>
+        {% for item in posts %}
+            <li>
+                {{ item.title }} - {{ item.sub_title }} - {{ item.content }}
+            </li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+from django.contrib import admin
+from .models import Post, Contact
+
+
+class PostAdmin(admin.ModelAdmin):
+    list_display = ['title', 'sub_title',
+                    'categories', 'deleted']
+    search_fields = ['title', 'sub_title']
+
+    def get_queryset(self, request):
+        return Post.objects.all()
+
+
+# PostAdmin muda o template do admin para o model Post
+admin.site.register(Post, PostAdmin)
+admin.site.register(Contact)
